@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/conge")
 @RestController
 public class CongeController {
+
 }
 // test
 //test 22
