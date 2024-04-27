@@ -24,8 +24,12 @@ public class EmployeServiceImpl implements EmployeService {
 
         Employee employeeFound = employeeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
-        employeeFound = employee;
-        return  employeeRepository.save(employeeFound);
+        employeeFound.setPrenom(employee.getPrenom());
+        employeeFound.setNom(employee.getNom());
+        employeeFound.setDepartement(employee.getDepartement());
+        employeeFound.setPoste(employee.getPoste());
+        employeeFound.setDateEmbauche(employee.getDateEmbauche());
+        return employeeRepository.save(employeeFound);
     }
 
     @Override

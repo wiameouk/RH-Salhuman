@@ -1,18 +1,20 @@
 package com.example.rhsalhuman.servicesImpl;
 
 import com.example.rhsalhuman.entities.Conge;
+import com.example.rhsalhuman.entities.Employee;
 import com.example.rhsalhuman.repositories.CongeRepository;
 import com.example.rhsalhuman.services.CongeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
 @Service
 public class CongeServiceImpl implements CongeService {
+    public List<Conge> getAllConge;
     @Autowired
     private CongeRepository congeRepository;
-
     @Override
     public Conge saveConge(Conge conge) {
         return congeRepository.save(conge);
@@ -20,10 +22,14 @@ public class CongeServiceImpl implements CongeService {
 
     @Override
     public Conge updateConge(Long id, Conge conge) {
-        Conge congeexiste = congeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("conge not found"));
-        congeexiste = conge;
-        return  congeRepository.save(congeexiste);
+
+        Conge congeFound = congeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("conge not existe"));
+        congeFound.setTypeConge(conge.getTypeConge());
+        congeFound.setDateDebut(conge.getDateDebut());
+        congeFound.setDateFin(conge.getDateFin());
+        congeFound.setStatut(conge.getStatut());
+        return congeRepository.save(congeFound);
     }
 
     @Override
@@ -40,7 +46,7 @@ public class CongeServiceImpl implements CongeService {
     }
 
     @Override
-    public List<Conge> getAllEmployee() {
+    public List<Conge> getAllConges() {
         return congeRepository.findAll();
     }
 }

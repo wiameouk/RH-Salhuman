@@ -8,6 +8,6 @@ public interface CongeService {
 
     void deleteCongeById(Long id);
     Conge getCongeById(Long id);
-    List<Conge> getAllEmployee();
+    List<Conge> getAllConges();
 
 }
