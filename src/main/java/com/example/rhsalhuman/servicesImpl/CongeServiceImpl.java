@@ -1,18 +1,15 @@
 package com.example.rhsalhuman.servicesImpl;
 
 import com.example.rhsalhuman.entities.Conge;
-import com.example.rhsalhuman.entities.Employee;
 import com.example.rhsalhuman.repositories.CongeRepository;
 import com.example.rhsalhuman.services.CongeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
 @Service
 public class CongeServiceImpl implements CongeService {
-    public List<Conge> getAllConge;
     @Autowired
     private CongeRepository congeRepository;
     @Override
