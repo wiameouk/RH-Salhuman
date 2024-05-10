@@ -12,7 +12,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api/HeureTravail")
-@Service
+@RestController
 public class HeureTravailController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class HeureTravailController {
 
 
     @GetMapping
-    public ResponseEntity<List<HeureTravail>> getHeureTravail()
+    public ResponseEntity<List<HeureTravail>> getHeuresTravails()
     {
         return ResponseEntity.ok(heureTravailService.getAllHeureTravail());
     }

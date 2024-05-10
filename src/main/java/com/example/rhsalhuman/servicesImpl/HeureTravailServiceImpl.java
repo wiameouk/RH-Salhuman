@@ -17,26 +17,26 @@ public class HeureTravailServiceImpl implements HeureTravailService {
 
     @Override
     public HeureTravail saveHeureTravail(HeureTravail heuretravail) {
-        return null;
+        return heuretravailrepository.save(heuretravail);
     }
 
     @Override
     public HeureTravail updateHeureTravail(Long id, HeureTravail heuretravail) {
-        return null;
+        return heuretravailrepository.save(heuretravail);
     }
 
     @Override
     public void deleteHeureTravailById(Long id) {
-
+          heuretravailrepository.deleteById(id);
     }
 
     @Override
     public HeureTravail getHeureTravailById(Long id) {
-        return null;
+        return heuretravailrepository.findById(id).get();
     }
 
     @Override
     public List<HeureTravail> getAllHeureTravail() {
-        return null;
+        return heuretravailrepository.findAll();
     }
 }
