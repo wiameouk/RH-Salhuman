@@ -11,8 +11,9 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api/FicheDepaie")
-@Service
+@RestController
 public class FicheDepaieController {
+    @Autowired
     private FicheDepaieServiceImp ficheDepaieService;
 
         @GetMapping

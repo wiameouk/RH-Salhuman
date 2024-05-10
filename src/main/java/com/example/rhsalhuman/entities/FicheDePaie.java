@@ -26,6 +26,10 @@ public class FicheDePaie {
     private double montantBrut;
     private double montantNet;
     private String detailsDeductions;
+    private double tauxHoraire;
+
+    // Nombre d'heures travaillées pour cette fiche de paie
+    private double heuresTravaillees;
 
     @ManyToOne
     private Employee employee;
