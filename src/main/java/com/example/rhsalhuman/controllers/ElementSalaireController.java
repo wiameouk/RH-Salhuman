@@ -46,4 +46,8 @@ public class ElementSalaireController {
         elementSalaireService.deleteElementSalaireById(elementSalaireId);
         return ResponseEntity.ok("Element Salaire deleted successfully !");
     }
+    @PostMapping("/calculer-salaire-total")
+    public double calculerSalaireTotal(@RequestBody ElementSalaire elementSalaire) {
+        return elementSalaireService.calculerSalaireTotal(elementSalaire);
+    }
 }
