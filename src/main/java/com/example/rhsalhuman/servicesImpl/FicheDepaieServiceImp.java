@@ -21,7 +21,7 @@ public class FicheDepaieServiceImp implements FicheDePaieService {
 
     @Override
     public FicheDePaie updateFicheDePaie(Long id, FicheDePaie ficheDePaie) {
-        return null;
+        return fichePaieRepository.save(ficheDePaie);
     }
 
     @Override

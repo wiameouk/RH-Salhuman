@@ -36,9 +36,7 @@ public class ElementSalaire {
 
     // Méthode pour obtenir le nombre d'heures travaillées
     public double getHeuresTravaillees() {
-        // Vous pouvez définir votre propre logique pour obtenir le nombre d'heures travaillées
-        // Par exemple, à partir de la fiche de paie ou en le définissant directement dans l'élément de salaire
-        // Supposons que le nombre d'heures travaillées est stocké dans la fiche de paie associée à cet élément de salaire
+
         if (ficheDePaie != null) {
             // Vous pouvez accéder au nombre d'heures travaillées à partir de la fiche de paie et le retourner
             return ficheDePaie.getHeuresTravaillees();
