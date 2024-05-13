@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +16,9 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@EntityListeners(UserListener.class)
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,9 +36,10 @@ public class User {
     )
     private Set<Role> roles = new HashSet<>();
 
-    public User(String username, String password,String email) {
+    public User(String username, String email,String password) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
+
 }
