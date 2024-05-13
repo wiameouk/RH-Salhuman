@@ -53,4 +53,10 @@ public class SignUpRequest {
     public void setRole(Set<String> role) {
         this.role = role;
     }
+
+    public SignUpRequest(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 }

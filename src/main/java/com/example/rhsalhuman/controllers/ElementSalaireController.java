@@ -18,7 +18,7 @@ public class ElementSalaireController {
 
     @GetMapping
     public ResponseEntity<List<ElementSalaire>> getAllElementsSalaire() {
-        List<ElementSalaire> elementsSalaire = elementSalaireService.getAllElementSalaires(); // Correction du nom de la méthode
+        List<ElementSalaire> elementsSalaire = elementSalaireService.getAllElementSalaires();
         return ResponseEntity.ok(elementsSalaire);
     }
 
